@@ -1,3 +1,194 @@
-body{
-	background: #5b7989;
+
+/*
+
+Consideraciones Generales
+Utiliza la tipografía Dancing Script. ----CUMPLIDO
+Establece el color de fondo negro #02010a. ----CUMPLIDO
+Cada imagen tiene un efecto de sombra de 2px con color #02010a. ----CUMPLIDO
+Crea un div llamado contenido que este centrado y que tenga máximo 900px de ancho para desktop y ocupará el 100% para móviles.  ----CUMPLIDO
+Utiliza media queries para manejar dos tamaños Desktop: con ancho de 900px o más y móvil con menos de 900px.
+Las imágenes deben ser responsivas. ----CUMPLIDO
+
+*/
+
+@font-face {
+    font-family: DancingScript;
+    src: url("../fuentes/DancingScript-Regular.otf") format("opentype");
+}
+
+body {
+  background-color: #02010a;
+  font-family: DancingScript;
+
+}
+
+img {
+  box-shadow: 2px 2px 2px #02010a;
+}
+
+
+/*
+
+Cabecera esta sección debe contener la información del sitio, toma en cuenta lo siguiente:
+Establece el fondo de color #5b7989.  --- CUMPLIDO
+Agrega el Nombre del sitio "Comenzando con la fotografía" ubicado al lado izquierdo, en blanco la letra debe tener una sombra de 2px de color #02010a. --- CUMPLIDO
+Aplica bordes redondeados en las esquinas superiores a 10px. --- CUMPLIDO
+Desarrolla un menú, para la versión desktop, a la derecha con enlaceas a tres páginas: Inicio, Paisajes, Retratos. La página actual debe tener estilo sin subrayado. --- CUMPLIDO
+ 
+*/
+*
+header{
+	background-color: #5b7989; 
+	text-shadow: 2px 2px 2px #02010a;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    height: 70px;
+    padding-top: 30px;
+    font-size: 30px;
+}
+
+.cabeceraTitulo {
+  float: left;
+  margin-left: 20px;
+}
+
+.cabeceraMenu {
+  float: right;
+  margin-right: 20px;
+}
+
+.menuActivo {
+  text-decoration-line: none;
+}
+
+/*
+
+Imagen Central en esta sección debes ubicar una imagen de tu preferencia, considera lo siguiente:
+Esta secccion debe tener la imagen centrada. ----CUMPLIDO
+Establece como color de fondo #82c3a6. ----CUMPLIDO
+
+*/
+
+.imagenCentral{
+  background-color: #82c3a6;
+}
+
+.imagenCentral img {
+  width: 92%;
+  margin: 15px 0;
+  position: relative;
+  left: 4%;
+}
+
+/*
+
+Imagen Secundaria en esta sección debes ubicar dos imágenes de tu preferencia, debajo de la imagen central una a la derecha y otra a la izquierda ten en cuenta lo siguiente: siguiente:
+Esta sección es a dos columnas usando flex para desktop y una columna para móvil ----- CUMPLIDO
+Aplica como color de fondo #d5c75f y un borde de 1px.  ----- CUMPLIDO
+Cada columna debe tener una imagen centrada y enlazar: la izquierda "paisajes" aplica un efecto de rotación de 10 grados cuando se coloca el puntero sobre ella, 
+agrega color de sombra #82c3a6 y borde 2px y la derecha "retratos" aplica un efecto de traslación de 5px hacia arriba y
+20px a la derecha cuando se coloca el puntero del ratón sobre ella agrega color de sombra #82c3a6 y borde 2px. ----- CUMPLIDO
+
+ */
+
+.imagenSecundaria{
+  background-color: #d5c75f;
+  border-width: 1px;
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content: center;
+  width: 100%;
+ }
+
+ .imagenSecundaria img {
+
+  width: 90%; 
+  max-width: 430px;
+  -webkit-transition: all 100ms ease;
+  -moz-transition:    all 100ms ease;
+  -ms-transition:     all 100ms ease;
+  transition:         all 100ms ease;
+  box-shadow: 2px 2px 5px #82c3a6;
+  border-width: 2px;
+  border-style: solid;
+  border-color: gray;
+  margin-top: 15px;
+  margin-bottom: : 15px;
+
+}
+
+.ColumnaImagenSecundaria {
+  text-align: center;
+}
+
+.imagenSecundaria1:hover {
+  -webkit-transform:  rotate(10deg);
+  -moz-transform:     rotate(10deg);
+  -ms-transform:      rotate(10deg);
+  transform:          rotate(10deg);
+}
+
+.imagenSecundaria2:hover {
+  -webkit-transform:  translate(20px,-5px);
+  -moz-transform:     translate(20px,-5px);
+  -ms-transform:      translate(20px,-5px);
+  transform:          translate(20px,-5px);
+}
+
+/*
+
+Pie de página en esta sección debes ubicar información de contacto, términos, redes sociales, y derechos, aplica las siguientes consideraciones:
+Aplica bordes redondeados en las esquinas inferiores a 10px. ----CUMPLIDO
+El pie debe estar a cuatro columnas en desktop y una columna en móvil.
+Aplica el color de fondo #C6d5c5. 
+La columna de contacto debe contener un correo electrónico, una dirección física y un número telefónico.
+En la columna de término agrega una frase corta referente a las políticas.
+En la columna de Redes Sociales, agrega tres de tu preferencia.
+En la columna de Derechos agrega tu nombre, apellido, el símbolo de CopyRight y el año actual.
+
+ */
+
+footer {
+
+  border-radius: 0px 0px 10px 10px;
+  background-color:  #C6d5c5;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 0.6em;
+  width: 100%;
+  
+}
+
+  footer div {
+	  width: 20%;
+	  margin-left: 2%;
+	  margin-right: 2%;
+	}
+
+footer img {
+  box-shadow: 0px 0px 0px #02010a;
+  
+}
+
+@media screen and (min-width: 900px) {
+  .contenido {
+    width: 900px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .contenido {
+    width: 100%;
+    margin: 0 auto;
+    }
+
+  footer div {
+	  width: 100%;
+	}
 }
