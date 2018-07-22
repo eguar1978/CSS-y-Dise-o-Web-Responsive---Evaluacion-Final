@@ -19,6 +19,7 @@ Las imágenes deben ser responsivas. ----CUMPLIDO
 body {
   background-color: #02010a;
   font-family: DancingScript;
+  min-width: 280px;
 
 }
 
@@ -69,6 +70,13 @@ Establece como color de fondo #82c3a6. ----CUMPLIDO
 
 */
 
+#imagenes {
+
+  width:100%;
+  margin 0 auto;
+  
+}
+
 .imagenCentral{
   background-color: #82c3a6;
 }
@@ -101,6 +109,7 @@ agrega color de sombra #82c3a6 y borde 2px y la derecha "retratos" aplica un efe
   flex-wrap:wrap;
   justify-content: center;
   width: 100%;
+  padding: 15px 0 5px 0;
  }
 
  .imagenSecundaria img {
@@ -115,8 +124,8 @@ agrega color de sombra #82c3a6 y borde 2px y la derecha "retratos" aplica un efe
   border-width: 2px;
   border-style: solid;
   border-color: gray;
-  margin-top: 15px;
-  margin-bottom: : 15px;
+  
+ 
 
 }
 
@@ -136,6 +145,48 @@ agrega color de sombra #82c3a6 y borde 2px y la derecha "retratos" aplica un efe
   -moz-transform:     translate(20px,-5px);
   -ms-transform:      translate(20px,-5px);
   transform:          translate(20px,-5px);
+}
+
+.galeria {
+  
+  background-color:  #d5c75f;
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 15px 0 5px 0;
+
+}
+
+.galeriaImg img{
+  min-width: 225px;
+  max-width: 280px;
+}
+
+.imgGal01 img {
+  -webkit-filter: blur(10px);
+  -moz-filter:    blur(10px);
+  -o-filter:      blur(10px);
+  -ms-filter:     blur(10px);
+  filter:         blur(10px);
+}
+
+.imgGal02, .imgGal04, .imgGal06 img {
+  -webkit-filter: grayscale(100%); 
+  -moz-filter:    grayscale(100%);
+  -o-filter:      grayscale(100%);
+  -ms-filter:     grayscale(100%);
+  filter:         grayscale(100%); 
+}
+
+.imgGal03 img {
+  -webkit-filter: sepia(90%);
+  -moz-filter:    sepia(90%);
+  -o-filter:      sepia(90%);
+  -ms-filter:     sepia(90%);
+  filter:         sepia(90%);
 }
 
 /*
@@ -188,7 +239,15 @@ footer img {
     margin: 0 auto;
     }
 
+  .cabeceraTitulo, .cabeceraMenu{
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    font-size: 20px;
+    }
+
   footer div {
 	  width: 100%;
 	}
 }
+
